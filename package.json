@@ -1,0 +1,21 @@
+{
+  "name": "casl-stencil",
+  "module": "src/index.ts",
+  "main": "src/index.ts",
+  "type": "module",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@stencil/core": "4.21.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "bunx stencil build --dev --watch --serve --no-open",
+    "build": "bunx stencil build"
+  },
+  "dependencies": {
+    "@casl/ability": "6.7.1"
+  }
+}
