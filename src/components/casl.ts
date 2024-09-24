@@ -62,7 +62,7 @@ interface CanProps {
   this?: string;
 }
 
-/** CASL Stencil component provides useful interface  that allow to hide or show UI elements based on user ability to see them. */
+/** CASL Stencil component provides useful interface that allow to hide or show UI elements based on user ability to see them. */
 export const Can: FunctionalComponent<CanProps> = (props, children) => {
   const ability = props.ability || CASL.defaultAbility;
   if (!ability) return null;
@@ -73,8 +73,8 @@ export const Can: FunctionalComponent<CanProps> = (props, children) => {
   const can = props.not ? "cannot" : "can";
   const canRender = ability[can](props.I || props.do, subject, props.field);
 
-  const firstChild = children[0] as Function | VNode;
   if (props.passThrough || canRender) {
+    const firstChild = children[0] as Function | VNode;
     return typeof firstChild === "function"
       ? firstChild(canRender, ability)
       : children;
